@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashi">
+    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop Fashi</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="./css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="./css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <%- include("./blocks/header") %>
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+       <!-- Hero Section Begin -->
+       <section class="hero-section">
+        <div class="hero-items owl-carousel">
+            <div class="single-hero-items set-bg" data-setbg="img/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Từ 1/1 - 20/4</span>
+                            <h1>Thời trang Fashi</h1>
+                            <p>Tưng bừng khai trương hệ thông của hàng 33 Thái Hà - Hà Nội</p>
+                            <a href="shop" class="primary-btn">Đến cửa hàng ngay</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Sale<span> 50%</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-items set-bg" data-setbg="img/hero-2.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Từ 1/1 - 20/4</span>
+                            <h1>Thời trang Fashi</h1>
+                            <p>Tưng bừng khai trương hệ thông của hàng 33 Thái Hà - Hà Nội</p>
+                            <a href="/shop" class="primary-btn">Đến cửa hàng ngay</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Sale<span> 50%</span></h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-1.jpg" alt="">
+                        <div class="inner-text">
+                            <h4>Thời trang nam</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-2.jpg" alt="">
+                        <div class="inner-text">
+                            <h4>Thời trang nữ</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-3.jpg" alt="">
+                        <div class="inner-text">
+                            <h4>Thời trang trẻ em</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+    <!-- Women Banner Section Begin -->
+    <section class="women-banner spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="product-large set-bg" data-setbg="img/products/women-large.jpg">
+                        <h2>Thời trang Nữ</h2>
+                        <a href="#">Xem nhiều hơn</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 offset-lg-1">
+                    <div class="filter-control">
+                        <ul>
+                            <li class="active">Thời trang công sở</li>
+                            <li>Thời trang dạ hội</li>
+                            <li>Phụ kiện</li>
+
+                        </ul>
+                    </div>
+                    <div class="product-slider owl-carousel">
+                      <% dataProducts.forEach( product => { %>
+                        <div class="product-item">
+                          <div class="pi-pic">
+                              <img src="http://localhost:3004/uploads/<%- product.image_product %> " alt="">
+                              <div class="sale">Sale</div>
+                              <div class="icon">
+                                  <i class="icon_heart_alt"></i>
+                              </div>
+                              <ul>
+                                  <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                  <li class="quick-view"><a href="http://localhost:3004/product/<%- product._id %> ">Xem ngay</a></li>
+                                  <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                              </ul>
+                          </div>
+                          <div class="pi-text">
+                              
+                            <a href="http://localhost:3004/product/<%- product._id %> ">
+                                  <h5><%- product.product_name %> </h5>
+                              </a>
+                              <div class="product-price">
+                                <b><%- product.prices[0].price + ' VNĐ'%></b>
+                                  <span> <%- product.prices[0].old_price + ' VNĐ' %></span>
+                              </div>
+                          </div>
+                      </div>
+                       <% }); %> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Women Banner Section End -->
+
+    <!-- Deal Of The Week Section Begin-->
+    <section class="deal-of-week set-bg spad" data-setbg="img/time-bg.jpg">
+        <div class="container">
+            <div class="col-lg-6 text-center">
+                <div class="section-title">
+                    <h2>Nhấp thả ga quà về nhà</h2>
+
+                    <div class="product-price">
+                        350.000 VNĐ
+                        <span>/ Sản Phẩm</span>
+                    </div>
+                </div>
+                <div class="countdown-timer" id="countdown">
+                    <div class="cd-item">
+                        <span>56</span>
+                        <p>Ngày</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>12</span>
+                        <p>Giờ</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>40</span>
+                        <p>Phút</p>
+                    </div>
+                    <div class="cd-item">
+                        <span>52</span>
+                        <p>Giây</p>
+                    </div>
+                </div>
+                <a href="#" class="primary-btn">Cửa hàng</a>
+            </div>
+        </div>
+    </section>
+    <!-- Deal Of The Week Section End -->
+
+    <!-- Man Banner Section Begin -->
+    <section class="man-banner spad">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-8">
+                  <div class="filter-control">
+                      <ul>
+                          <li class="active">Quần áo mùa hè</li>
+                          <li>Phụ kiện</li>
+                          
+                      </ul>
+                  </div>
+                  <div class="product-slider owl-carousel">
+                    <% dataProducts.forEach( product => { %>
+                      <div class="product-item">
+                        <div class="pi-pic">
+                            <img src="http://localhost:3004/uploads/<%- product.image_product %> " alt="">
+                            <div class="sale">Sale</div>
+                            <div class="icon">
+                                <i class="icon_heart_alt"></i>
+                            </div>
+                            <ul>
+                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                <li class="quick-view"><a href="http://localhost:3004/product/<%- product._id %> ">Xem ngay</a></li>
+                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="pi-text">
+                            
+                          <a href="http://localhost:3004/product/<%- product._id %> ">
+                                <h5><%- product.product_name %> </h5>
+                            </a>
+                            <div class="product-price">
+                              <b><%- product.prices[0].price + ' VNĐ'%></b>
+                                <span> <%- product.prices[0].old_price + ' VNĐ' %></span>
+                            </div>
+                        </div>
+                    </div>
+                     <% }); %> 
+                  </div>
+              </div>
+              <div class="col-lg-3 offset-lg-1">
+                  <div class="product-large set-bg m-large" data-setbg="img/products/man-large.jpg">
+                      <h2>Men’s</h2>
+                      <a href="#">Discover More</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+    <!-- Man Banner Section End -->
+   
+    <!-- Instagram Section Begin -->
+    <div class="instagram-photo">
+        <div class="insta-item set-bg" data-setbg="img/insta-1.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">Instagram</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-2.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">Instagram</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-3.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">Instagram</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-4.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">Instagram</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-5.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">Instagram</a></h5>
+            </div>
+        </div>
+        <div class="insta-item set-bg" data-setbg="img/insta-6.jpg">
+            <div class="inside-text">
+                <i class="ti-instagram"></i>
+                <h5><a href="#">Instagram</a></h5>
+            </div>
+        </div>
+    </div>
+    <!-- Instagram Section End -->
+
+    <!-- Latest Blog Section Begin -->
+    <section class="latest-blog spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Blog</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-blog">
+                        <img src="img/latest-1.jpg" alt="">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    4 Tháng 1 2020
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            <a href="/blog-detail">
+                                <h4>4 phong cách street style chất chơi nhưng ít tốn kém nhất ai cũng có thể thử</h4>
+                            </a>
+                            <p>Vẫn có cách tạo nên phong cách street style thời thượng cho anh em mà không tốn quá nhiều
+                                tiền, bằng chứng chính là 4 style chất chơi dưới đây.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-blog">
+                        <img src="img/latest-2.jpg" alt="">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    7 Tháng 2 2020
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            <a href="/blog-detail">
+                                <h4>Top 10 cách kết hợp quần áo mùa đông nữ đẹp nhất</h4>
+                            </a>
+                            <p>Đông về rồi mà bạn còn đang loay hoay không biết mặc gì cho ấm lại vẫn thật đẹp? Đừng lo,
+                                hãy để Sakurafashion giúp bạn với 10 "câu thần chú" mix đồ cho những ngày đông lạnh giá
+                                này nhé, vừa đảm bảo tiết kiệm được thời gian lại có thể giúp bạn tha hồ diện đồ đẹp một
+                                cách thật tự tin, nổi bật nữa. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-latest-blog">
+                        <img src="img/latest-3.jpg" alt="">
+                        <div class="latest-text">
+                            <div class="tag-list">
+                                <div class="tag-item">
+                                    <i class="fa fa-calendar-o"></i>
+                                    18 Tháng 3 2020
+                                </div>
+                                <div class="tag-item">
+                                    <i class="fa fa-comment-o"></i>
+                                    5
+                                </div>
+                            </div>
+                            <a href="#">
+                                <h4>Cách chọn quần áo đi phượt cá tính dành cho nữ</h4>
+                            </a>
+                            <p>Nếu bạn chưa biết nên mặc quần áo gì khi đi phượt thì bài viết này xin chia sẻ cho các
+                                bạn những bộ đồ phù hợp. Những bộ đồ phù hợp sẽ giúp cho bạn thoải mái trên suốt chặng
+                                đường đi mà không cần cầu kỳ, vướng bận gì mà vẫn thể hiện được cá tính.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="benefit-items">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="img/icon-1.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Free Shipping</h6>
+                                <p>Cho tất cả đơn hàng trên 1.000.000 VNĐ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="img/icon-2.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Giao hàng đúng hạn</h6>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="img/icon-1.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Thanh toán an toàn</h6>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Man Banner Section End -->
+
+    <!-- Footer Section Begin -->
+    <%- include("./blocks/footer") %>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/jquery.dd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
